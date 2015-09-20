@@ -16,3 +16,8 @@ This is an R package developed for easy visualization of longitudinal microbiome
 
 ## Installation
 You can easily download the [package from CRAN](https://cran.r-project.org/web/packages/patPRO/). If you want the most up-to-date version included here on GitHub, just download the GitHub release and load it into R.
+
+## Citing This Package
+Did using patPRO help your research? Give us a shout-out by citing it! Simply include the following:
+
+Hannigan GD, Loesche MA, Hodkinson BP, Mehta S and Grice EA (2015). patPRO: Visualizing Temporal Microbiome Data. R package version 1.0.0. http://CRAN.R-project.org/package=patPRO
