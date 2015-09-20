@@ -1,0 +1,8 @@
+exportPattern("^[[:alpha:]]+")
+import(reshape2)
+import(ggplot2)
+import(grid)
+import(gridExtra)
+import(plyr)
+import(RColorBrewer)
+importFrom("stats", "sd")
