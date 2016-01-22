@@ -113,14 +113,14 @@ plotTopTaxa <- function(top.taxa.data.frame, pat.id, subject.id.col="SubjectID",
   # Also make the abundance values up to 100 so that percent goes up to 100
   sub_specific_taxa$Abundance <- sub_specific_taxa$Abundance * 100
   if(length(TimePointCount)>1 & mark.events==FALSE) {
-    top_taxa_plot <- ggplot(sub_specific_taxa, aes_string(x='TP',y='Abundance',group='Bacteria',fill='Bacteria')) + geom_area(position = "stack", stat = "identity", width = 1) + theme_bw() + theme(legend.position="right", legend.direction="vertical", legend.box="horizontal", legend.text = element_text(size = 7)) + coord_cartesian(ylim = c(0,100))
+    top_taxa_plot <- ggplot(sub_specific_taxa, aes_string(x='TP',y='Abundance',group='Bacteria',fill='Bacteria')) + geom_area(position = "stack", stat = "identity", aes(width = 1)) + theme_bw() + theme(legend.position="right", legend.direction="vertical", legend.box="horizontal", legend.text = element_text(size = 7)) + coord_cartesian(ylim = c(0,100))
   } else if(mark.events==TRUE) {
-    top_taxa_plot <- ggplot(sub_specific_taxa, aes_string(x='TP',y='Abundance',group='Bacteria',fill='Bacteria')) + geom_area(position = "stack", stat = "identity", width = 1) + theme_bw() + theme(legend.position="right", legend.direction="vertical", legend.box="horizontal", legend.text = element_text(size = 7)) + coord_cartesian(ylim = c(0,100))
+    top_taxa_plot <- ggplot(sub_specific_taxa, aes_string(x='TP',y='Abundance',group='Bacteria',fill='Bacteria')) + geom_area(position = "stack", stat = "identity", aes(width = 1)) + theme_bw() + theme(legend.position="right", legend.direction="vertical", legend.box="horizontal", legend.text = element_text(size = 7)) + coord_cartesian(ylim = c(0,100))
     for(counter in mark.times) {
       top_taxa_plot <- top_taxa_plot + geom_segment(aes_string(x=counter, y=5, xend=counter, yend=0), arrow = arrow(length = unit(0.3, "cm"))) + geom_text(x=counter, y=7.5, label=mark.text, size=3)
     }
   } else {
-    top_taxa_plot <- ggplot(sub_specific_taxa, aes_string(x='TP',y='Abundance',group='Bacteria',fill='Bacteria')) + geom_bar(stat = "identity", width = 0) + theme_bw()  + theme(legend.position="right", legend.direction="vertical", legend.box="horizontal", legend.text = element_text(size = 7)) + coord_cartesian(ylim = c(0,100) )
+    top_taxa_plot <- ggplot(sub_specific_taxa, aes_string(x='TP',y='Abundance',group='Bacteria',fill='Bacteria')) + geom_bar(stat = "identity", aes(width = 0)) + theme_bw()  + theme(legend.position="right", legend.direction="vertical", legend.box="horizontal", legend.text = element_text(size = 7)) + coord_cartesian(ylim = c(0,100) )
   }
   if(color.brewer.set=="" & color.manual.set=="") {
     return(top_taxa_plot + ylab(y.lab) + xlab(x.lab) + ggtitle(plot.title) + scale_x_continuous(breaks=TimePointCount) + theme(legend.text = element_text(size = legend.text.size)))
@@ -143,14 +143,14 @@ plotTopTaxaMean <- function(top.taxa.data.frame, tmpt.id.col="Time_point", y.lab
   # Also make the abundance values up to 100 so that percent goes up to 100
   sub_specific_taxa$Abundance <- sub_specific_taxa$Abundance * 100
   if(length(TimePointCount)>1 & mark.events==FALSE) {
-    top_taxa_plot <- ggplot(sub_specific_taxa, aes_string(x='TP',y='Abundance',group='Bacteria',fill='Bacteria')) + geom_area(position = "stack", stat = "identity", width = 1) + theme_bw()  + theme(legend.position="right", legend.direction="vertical", legend.box="horizontal", legend.text = element_text(size = 7)) + coord_cartesian(ylim = c(0,100))
+    top_taxa_plot <- ggplot(sub_specific_taxa, aes_string(x='TP',y='Abundance',group='Bacteria',fill='Bacteria')) + geom_area(position = "stack", stat = "identity", aes(width = 1)) + theme_bw()  + theme(legend.position="right", legend.direction="vertical", legend.box="horizontal", legend.text = element_text(size = 7)) + coord_cartesian(ylim = c(0,100))
   } else if(mark.events==TRUE) {
-    top_taxa_plot <- ggplot(sub_specific_taxa, aes_string(x='TP',y='Abundance',group='Bacteria',fill='Bacteria')) + geom_area(position = "stack", stat = "identity", width = 1) + theme_bw()  + theme(legend.position="right", legend.direction="vertical", legend.box="horizontal", legend.text = element_text(size = 7)) + coord_cartesian(ylim = c(0,100))
+    top_taxa_plot <- ggplot(sub_specific_taxa, aes_string(x='TP',y='Abundance',group='Bacteria',fill='Bacteria')) + geom_area(position = "stack", stat = "identity", aes(width = 1)) + theme_bw()  + theme(legend.position="right", legend.direction="vertical", legend.box="horizontal", legend.text = element_text(size = 7)) + coord_cartesian(ylim = c(0,100))
     for(counter in mark.times) {
       top_taxa_plot <- top_taxa_plot + geom_segment(aes_string(x=counter, y=5, xend=counter, yend=0), arrow = arrow(length = unit(0.3, "cm"))) + geom_text(x=counter, y=7.5, label=mark.text, size=3)
     }
   } else {
-    top_taxa_plot <- ggplot(sub_specific_taxa, aes_string(x='TP',y='Abundance',group='Bacteria',fill='Bacteria')) + geom_bar(stat = "identity", width = 0) + theme_bw()  + theme(legend.position="right", legend.direction="vertical", legend.box="horizontal", legend.text = element_text(size = 7)) + coord_cartesian(ylim = c(0,100))
+    top_taxa_plot <- ggplot(sub_specific_taxa, aes_string(x='TP',y='Abundance',group='Bacteria',fill='Bacteria')) + geom_bar(stat = "identity", aes(width = 0)) + theme_bw()  + theme(legend.position="right", legend.direction="vertical", legend.box="horizontal", legend.text = element_text(size = 7)) + coord_cartesian(ylim = c(0,100))
   }
   if(color.brewer.set=="" & color.manual.set=="") {
     return(top_taxa_plot + ylab(y.lab) + xlab(x.lab) + ggtitle(plot.title) + scale_x_continuous(breaks=TimePointCount) + theme(legend.text = element_text(size = legend.text.size)))
@@ -278,9 +278,9 @@ topAbsAbundPlot <- function(rel.abund.df, patient.id, subject.id.col="SubjectID"
   ArrowY <- 0.05 * max(subject_specific_df$ABS_ABUND)
   TextY <- 0.08 * max(subject_specific_df$ABS_ABUND)
   if(mark.events==FALSE) {
-    top_abund_plot <- ggplot(subject_specific_df, aes_string(x='TP',y='ABS_ABUND',group='BACTERIA',fill='BACTERIA')) + geom_area(position = "stack", stat = "identity", width = 1) + theme_bw()  + theme(legend.position="right", legend.direction="vertical", legend.box="horizontal", legend.text = element_text(size = 7)) + geom_line(aes_string(x='TP', y='BAC_LOAD'), linetype="dashed")
+    top_abund_plot <- ggplot(subject_specific_df, aes_string(x='TP',y='ABS_ABUND',group='BACTERIA',fill='BACTERIA')) + geom_area(position = "stack", stat = "identity", aes(width = 1)) + theme_bw()  + theme(legend.position="right", legend.direction="vertical", legend.box="horizontal", legend.text = element_text(size = 7)) + geom_line(aes_string(x='TP', y='BAC_LOAD'), linetype="dashed")
   } else if(mark.events==TRUE){
-    top_abund_plot <- ggplot(subject_specific_df, aes_string(x='TP',y='ABS_ABUND',group='BACTERIA',fill='BACTERIA')) + geom_area(position = "stack", stat = "identity", width = 1) + theme_bw()  + theme(legend.position="right", legend.direction="vertical", legend.box="horizontal", legend.text = element_text(size = 7)) + geom_line(aes_string(x='TP', y='BAC_LOAD'), linetype="dashed")
+    top_abund_plot <- ggplot(subject_specific_df, aes_string(x='TP',y='ABS_ABUND',group='BACTERIA',fill='BACTERIA')) + geom_area(position = "stack", stat = "identity", aes(width = 1)) + theme_bw()  + theme(legend.position="right", legend.direction="vertical", legend.box="horizontal", legend.text = element_text(size = 7)) + geom_line(aes_string(x='TP', y='BAC_LOAD'), linetype="dashed")
     for(counter in mark.times) {
       top_abund_plot <- top_abund_plot + geom_segment(aes_string(x=counter, y=ArrowY, xend=counter, yend=0), arrow = arrow(length = unit(0.3, "cm"))) + geom_text(x=counter, y=TextY, label=mark.text, size=3)
     }

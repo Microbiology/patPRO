@@ -72,6 +72,7 @@ patPRO: An R package for the visualization of longitudinal microbiome data. Hann
 \keyword{ package }
 
 \examples{
+library("patPRO")
 data("PatProOTU",package="patPRO")
 data("PatProMap",package="patPRO")
 transTestRelAbund <- transposeRelAbund(PatProOTU)
