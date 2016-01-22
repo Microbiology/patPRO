@@ -6,12 +6,14 @@ Date: 2015-09-18
 Author: Hannigan GD, Loesche MA, Hodkinson BP, Mehta S, Grice EA
 Maintainer: Geoffrey D Hannigan <ghanni@upenn.edu>
 Imports:
-	reshape2,
-	ggplot2,
-	grid,
-	gridExtra,
-	plyr,
-	RColorBrewer
-Description: An R package to quickly and easily visualize longitudinal microbiome profiles using standard output from the QIIME microbiome analysis toolkit.
+    reshape2,
+    ggplot2,
+    grid,
+    gridExtra,
+    plyr,
+    RColorBrewer
+Description: An R package to quickly and easily visualize longitudinal
+    microbiome profiles using standard output from the QIIME microbiome analysis
+    toolkit.
 License: GPL-3
 LazyLoad: yes
