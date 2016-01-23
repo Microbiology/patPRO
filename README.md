@@ -1,4 +1,4 @@
-# patPRO
+# patPRO 1.1.0
 Visualizing Temporal Microbiome Data
 
 ## About This Package
